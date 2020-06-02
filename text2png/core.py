@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 from filehandling import join_path
-from omnitools import color_value, text_with_padding
+from omnitools import color_value, textbox
 import os
 
 
@@ -20,7 +20,7 @@ class TextToPng(object):
 
     def create(self, text: str, padding: int = -1) -> str:
         font = ImageFont.truetype(self.font_file, self.font_size)
-        shape, pos = text_with_padding(font, text, padding)
+        shape, pos = textbox(font, text, padding)
         img = Image.new("RGB", shape, color=self.background_color)
         brush = ImageDraw.Draw(img)
         brush.text(pos, text, font=font, fill=self.text_color)
