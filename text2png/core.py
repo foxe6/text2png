@@ -18,13 +18,15 @@ class TextToPng(object):
         self.text_color = text_color
         self.save_dir = save_dir
 
-    def create(self, text: str, padding: int = -1) -> str:
+    def create(self, text: str, padding: int = -1, filename: str = None) -> str:
+        if filename is None:
+            filename = "__tmp.png"
         font = ImageFont.truetype(self.font_file, self.font_size)
         shape, pos = textbox(font, text, padding)
         img = Image.new("RGB", shape, color=self.background_color)
         brush = ImageDraw.Draw(img)
         brush.text(pos, text, font=font, fill=self.text_color)
-        save_path = join_path(self.save_dir, "__tmp.png")
+        save_path = join_path(self.save_dir, filename)
         img.save(save_path)
         return save_path
 
