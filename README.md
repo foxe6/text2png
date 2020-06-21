@@ -41,7 +41,7 @@ print(
     t2p.create(
         # what text
         text="HELLO",
-        # text padding, pixel
+        # text padding, in pixels
         padding=15,
         # file name
         filename="hello.png"
