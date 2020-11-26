@@ -18,9 +18,12 @@ open("README.md", "wb").write(readme.encode("utf-8"))
 description = re.search(r"<i>(.*?)</i>", readme)[1]
 setup(
     name="text2png",
-    version="0.1.0",
+    version="0.1.6",
     keywords=["convert text to image png"],
     packages=find_packages(),
+    package_data = {
+        '': ['*.ttc'],
+    },
     url="https://github.com/foxe6/text2png",
     license="AGPL-3.0",
     author="f̣ộx̣ệ6",
