@@ -12,7 +12,7 @@ class TextToPng(object):
                  background_color: color_value = (0, 0, 0),
                  text_color: color_value = (255, 255, 255),
                  save_dir: str = os.environ["TEMP"]) -> None:
-        self.font_file = font_file or os.path.join(os.path.basename(os.path.abspath(__file__)), "mingliu.ttc")
+        self.font_file = font_file or os.path.join(os.path.dirname(os.path.abspath(__file__)), "mingliu.ttc")
         self.font_size = font_size
         self.background_color = background_color
         self.text_color = text_color
