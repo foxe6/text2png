@@ -18,7 +18,7 @@ open("README.md", "wb").write(readme.encode("utf-8"))
 description = re.search(r"<i>(.*?)</i>", readme)[1]
 setup(
     name="text2png",
-    version="0.1.6",
+    version="0.2.0",
     keywords=["convert text to image png"],
     packages=find_packages(),
     package_data = {
